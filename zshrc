@@ -22,39 +22,34 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# EDITOR
-export EDITOR=/usr/local/bin/vim
-export VISUAL=/usr/local/bin/vim
+# rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-# LESS
-export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold
-export LESS_TERMCAP_md=$'\E[1;36m'     # begin blink
-export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
-export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
-export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
-export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
-export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
+# eza
+if [ "$(command -v eza)" ]; then
+  unalias -m 'll'
+  unalias -m 'l'
+  unalias -m 'la'
+  unalias -m 'ls'
+  alias ls='eza --color automatic --icons -aa -s type'
+  alias ll='eza --header --color always --icons --git --git-repos -l -aa -s type -g -o'
+fi
 
-# RBENV
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# bat
+if [ "$(command -v bat)" ]; then
+  unalias -m 'cat'
+  alias cat='bat -pp'
+fi
 
-# BUNDLER
-alias be='bundle exec'
-alias bi='bundle install'
-alias bu='bundle update'
+# fzf + ripgrep
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# RAILS
-alias ror='bin/rails'
-alias rors='ror s'
-alias rorc='ror c'
-alias rorg='ror g'
-alias rord='ror d'
-
-# SYSTEM
-alias showHidden='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
-alias hideHidden='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
-alias editZshrc='atom $HOME/.zshrc'
-alias editPreztorc='atom $HOME/.zpreztorc'
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_DEFAULT_OPTS='-m'
+fi
