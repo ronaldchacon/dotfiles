@@ -1,0 +1,2 @@
+setopt HIST_FCNTL_LOCK
+setopt SHARE_HISTORY

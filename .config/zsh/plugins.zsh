@@ -1,0 +1,8 @@
+plug "wintermi/zsh-brew"
+plug "zap-zsh/supercharge"
+plug "zsh-users/zsh-autosuggestions"
+plug "zap-zsh/fzf"
+plug "wintermi/zsh-fnm"
+plug "zap-zsh/exa"
+plug "zsh-users/zsh-syntax-highlighting"
+plug "romkatv/powerlevel10k"
