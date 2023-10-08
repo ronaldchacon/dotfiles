@@ -29,4 +29,6 @@ if type brew &>/dev/null; then
 fi
 
 # rbenv
+export PATH="${HOME}/.rbenv/shims:${PATH}"
+export RBENV_SHELL=zsh
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
