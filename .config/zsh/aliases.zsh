@@ -1,4 +1,4 @@
-# Colorize grep output (good for log files)
+# colorize grep output (good for log files)
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -23,3 +23,15 @@ if [ "$(command -v bat)" ]; then
   unalias -m 'cat'
   alias cat='bat -pp'
 fi
+
+# bundler
+alias be='bundle exec'
+alias bi='bundle install'
+alias bu='bundle update'
+
+# rails
+alias ror='bin/rails'
+alias rors='ror s'
+alias rorc='ror c'
+alias rorg='ror g'
+alias rord='ror d'
