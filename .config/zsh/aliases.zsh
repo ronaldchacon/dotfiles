@@ -31,7 +31,7 @@ alias bu='bundle update'
 
 # rails
 alias ror='bin/rails'
-alias rors='ror s'
-alias rorc='ror c'
-alias rorg='ror g'
-alias rord='ror d'
+alias rors='bin/rails s'
+alias rorc='bin/rails c'
+alias rorg='bin/rails g'
+alias rord='bin/rails d'
