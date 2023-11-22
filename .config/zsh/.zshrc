@@ -12,6 +12,7 @@ plug "$HOME/.config/zsh/env.zsh"
 plug "$HOME/.config/zsh/plugins.zsh"
 plug "$HOME/.config/zsh/opts.zsh"
 plug "$HOME/.config/zsh/keybinds.zsh"
+plug "$HOME/.config/zsh/functions.zsh"
 plug "$HOME/.config/zsh/aliases.zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
