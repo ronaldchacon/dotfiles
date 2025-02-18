@@ -1,5 +1,9 @@
+unset ZSH_AUTOSUGGEST_USE_ASYNC
+
+# Editor
 export EDITOR="nvim"
 export PAGER="less"
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
@@ -28,11 +32,7 @@ if type brew &>/dev/null; then
   compinit
 fi
 
-# rbenv
-# export PATH="${HOME}/.rbenv/shims:${PATH}"
-# export RBENV_SHELL=zsh
-# if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
 # chruby
 source "$(brew --prefix chruby)/share/chruby/chruby.sh"
 source "$(brew --prefix chruby)/share/chruby/auto.sh"
+# chruby ruby-3.3.0
