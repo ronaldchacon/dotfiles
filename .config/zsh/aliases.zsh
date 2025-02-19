@@ -24,6 +24,21 @@ if [ "$(command -v bat)" ]; then
   alias cat="bat -pp"
 fi
 
+# eza
+if [ "$(command -v eza)" ]; then
+  alias ls='eza --group-directories-first --icons=auto'
+
+  if eza --version | grep -q '+git';
+  then
+    alias ll='ls -lh --git'
+  else
+    alias ll='ls -lh'
+  fi
+
+  alias la='ll -a'
+  alias tree='ll --tree --level=2'
+fi
+
 # bundler
 alias be="bundle exec"
 alias bi="bundle install"
