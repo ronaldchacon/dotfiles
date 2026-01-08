@@ -1,8 +1,3 @@
-unset ZSH_AUTOSUGGEST_USE_ASYNC
-
-# Editor
-export EDITOR="nvim"
-export PAGER="less"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 # Ensure path arrays do not contain duplicates.
@@ -28,11 +23,11 @@ fi
 # Homebrew
 if type brew &>/dev/null; then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-  autoload -Uz compinit
-  compinit
+  autoload -Uz compinit && compinit
 fi
 
-# chruby
-source "$(brew --prefix chruby)/share/chruby/chruby.sh"
-source "$(brew --prefix chruby)/share/chruby/auto.sh"
-# chruby ruby-3.3.0
+# fzf + ripgrep
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_DEFAULT_OPTS='-m'
+fi

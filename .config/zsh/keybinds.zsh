@@ -1,3 +1,6 @@
+# set emacs keybindings as default
+bindkey -e
+
 # remove '^x' keybinding from supercharge plugin
 bindkey -r '^X'
 

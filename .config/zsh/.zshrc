@@ -10,3 +10,4 @@ plug "$HOME/.config/zsh/aliases.zsh"
 
 # Starship
 eval "$(starship init zsh)"
+eval "$(mise activate zsh)"
