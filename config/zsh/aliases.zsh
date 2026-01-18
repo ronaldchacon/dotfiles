@@ -46,7 +46,7 @@ alias bu="bundle update"
 
 # rails
 alias ror="bin/rails"
-alias rors="bin/rails s -b 127.0.0.1"
+alias rors="rails_server"
 alias rorc="bin/rails c"
 alias rorg="bin/rails g"
 alias rord="bin/rails d"

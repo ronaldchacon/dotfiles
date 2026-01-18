@@ -12,3 +12,11 @@ function git_current_branch() {
   fi
   echo ${ref#refs/heads/}
 }
+
+function rails_server() {
+  if [ -x bin/dev ]; then
+    bin/dev
+  else
+    bin/rails server
+  fi
+}
